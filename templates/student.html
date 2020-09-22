@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link href="style.css" type="text/css" rel="stylesheet">
+    </head>
+   <body>
+      <form  action = "http://localhost:5000/result" method = "POST">
+          <input type = "button" value="Create 16 rows" onclick = "genTable('scoresheet')"/>
+          <table id="scoresheet" style="border:black; border-width: thick;">
+              <tr>
+         <td><p>Jersey Number <label name = "number" id = "number"/></p></td>
+         <td><p>points <label name = "points" id = "points"/></p></td>
+         <td><p>fouls <label name = "fouls" style ="width: 30px;"/></p></td>
+         <td><p>2 pts <label name = "2 points" id = "2pts" style ="width: 30px;"/></p></td>
+         <td><p>3 pts <label name = "3 points" id = "3pts" style ="width: 30px;"/></p></td>
+         <td><p>ft <label name = "freethrows" id = "1pt" style ="width: 30px;"/></p></td>
+         <td><p>reb <label name = "rebounds"  style ="width: 30px;"/></p></td>
+         <td><p>ast <label name = "assists"  style ="width: 30px;"/></p></td>
+         <td><p><input type = "submit" value = "submit" /></p></td>
+              </tr>
+              <button type = "button" onclick="add()">Enter points</button>
+              </table>
+          <script>
+              var points = 0;
+              var two =0;
+              var three =0;
+              var one=0;
+
+              function add(tableID){
+
+
+              }
+              function genTable(tableID){
+                  var z =0;
+                  var table = document.getElementById(tableID);
+                  var rowCount;
+                  var row;
+                  var jerseyNum;
+                  var points;
+                  var fouls;
+                  var twos;
+                  var threes;
+                  var frees;
+                  var rebs;
+                  var asts;
+                  var cell0, cell1, cell2, cell3, cell4,
+                      cell5, cell6, cell7;
+                  var elem0, elem1, elem2, elem3, elem4,
+                      elem5, elem6, elem7;
+
+                  while(z<16){
+                      rowCount = table.rows.length;
+                      row = table.insertRow(rowCount);
+
+                      //cell 0 - Jersey Number
+                      cell0 = row.insertCell(0);
+                      jerseyNum=rowCount;
+                      cell0.innerHTML=jerseyNum;
+                      elem0 = document.createElement("label");
+
+
+                      //cell 1 - player points
+                      cell1 = row.insertCell(1);
+                      elem1 = document.createElement("label");
+                      elem1.name = "points";
+                      elem1.style.width = "30px";
+                      elem1.style.color = "mistyrose";
+                      cell1.style.color = "black";
+                      cell1.appendChild(elem1);
+
+                      //cell2 - Fouls
+                      cell2 = row.insertCell(2);
+                      cell2.style.color = "black";
+
+                      cell2.style.width = "10px";
+                      elem2 = document.createElement("input");
+                      elem2.type = "number";
+                      elem2.name ="fouls"
+                      elem2.style.width = "30px";
+                      elem2.style.backgroundColor = "powderblue";
+                      cell2.appendChild(elem2);
+
+                      //cell3 - 2 pts
+                      cell3 = row.insertCell(3);
+                      elem3 = document.createElement("input");
+                      elem3.type = "number";
+                      elem3.step = "1";
+                      elem3.style.width = "30px";
+                      elem3.style.backgroundColor = "lightgreen";
+                      cell3.appendChild(elem3);
+
+                      //cell4 - 3 pts
+                      cell4 = row.insertCell(4);
+                      elem4 = document.createElement("input");
+                      elem4.type = "number";
+                      elem4.step = "1";
+                      elem4.style.width = "30px";
+                      elem4.style.backgroundColor = "aliceblue";
+                      cell4.appendChild(elem4);
+
+                      //cell5 - 1 pt
+                      cell5 = row.insertCell(5);
+                      elem5 = document.createElement("input");
+                      elem5.type = "number";
+                      elem5.step = "1";
+                      elem5.style.width = "30px";
+                      elem5.style.backgroundColor = "bisque";
+                      cell5.appendChild(elem5);
+
+                      //cell6 - rebounds
+                      cell6 = row.insertCell(6);
+                      elem6 = document.createElement("input");
+                      elem6.type = "number";
+                      elem6.step = "1";
+                      elem6.style.width = "30px";
+                      elem6.style.backgroundColor = "honeydew";
+                      cell6.appendChild(elem6);
+
+                      //cell7 - assists
+                      cell7 = row.insertCell(7);
+                      elem7 = document.createElement("input");
+                      elem7.type = "number";
+                      elem7.step = "1";
+                      elem7.style.width = "30px";
+                      elem7.style.backgroundColor = "oldlace";
+                      cell7.appendChild(elem7);
+
+                      z++;
+
+                  }
+
+              }
+          </script>
+      </form>
+   </body>
+</html>

@@ -1,0 +1,11 @@
+table{
+    color: black;
+    width: 10px;
+    border: blue;
+    text-align: center;
+
+}
+tr{
+    border-bottom: black;
+    border-bottom-width: thick;
+}
